@@ -1,0 +1,6 @@
+#ifndef TESTS_CONFIG_H_IN
+#define TESTS_CONFIG_H_IN
+
+#define TESTS_SOURCE_DIR "${TESTS_SOURCE_DIR}/"
+
+#endif // TESTS_CONFIG_H_IN
