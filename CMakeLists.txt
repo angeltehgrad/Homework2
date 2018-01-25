@@ -21,13 +21,15 @@ set_target_properties(ip_filter ip_filter_lib test_ip_filter PROPERTIES
                       CXX_STANDARD 14
                       CXX_STANDARD_REQUIRED ON)
 
-if(${GCC})
-set_target_properties(ip_filter ip_filter_lib test_ip_filter PROPERTIES
-                      COMPILE_OPTIONS -Wpedantic -Wall -Wextra
-                                        )
-elseif(${WIN})
+
+if(${WIN})
 set_target_properties(ip_filter ip_filter_lib test_ip_filter PROPERTIES
                       COMPILE_FLAGS "/W4")
+
+else()
+
+set_target_properties(ip_filter ip_filter_lib test_ip_filter PROPERTIES
+                      COMPILE_OPTIONS -Wpedantic -Wall -Wextra)
 endif()
 
 set_target_properties(test_ip_filter PROPERTIES
