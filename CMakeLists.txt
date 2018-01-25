@@ -17,6 +17,10 @@ add_library(ip_filter_lib lib.cpp lib.h  version.h)
 
 add_executable(test_ip_filter test.cpp lib.h)
 
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 set_target_properties(ip_filter ip_filter_lib test_ip_filter PROPERTIES
                       CXX_STANDARD 14
                       CXX_STANDARD_REQUIRED ON)
