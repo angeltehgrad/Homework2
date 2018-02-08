@@ -24,7 +24,11 @@ void printIPs(const VecIPAdresses & ips)
 //------------------------------------------------------
 void sort(VecIPAdresses & ips)
 {
-  std::sort(ips.rbegin(), ips.rend());
+  auto f = [] (IPAddress & l, IPAddress & r)
+  {
+    return l > r;
+  };
+  std::sort(ips.begin(), ips.end(), f);
 }
 //------------------------------------------------------
 VecIPAdresses filter(const VecIPAdresses & in,

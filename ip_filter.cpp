@@ -9,12 +9,6 @@
 // (".11", '.') -> ["", "11"]
 // ("11.22", '.') -> ["11", "22"]
 //------------------------------------------------------
-void sortAndPrint(VecIPAdresses & ips)
-{
-  sort(ips);
-  printIPs(ips);
-}
-//------------------------------------------------------
 int main(int argc, char const *argv[])
 {
     try
@@ -22,16 +16,16 @@ int main(int argc, char const *argv[])
         VecIPAdresses ip_pool;
 
         readIPs(ip_pool);
-        sortAndPrint(ip_pool);
+        sort(ip_pool);
 
         VecIPAdresses filtered = filter(ip_pool,1);
-        sortAndPrint(filtered);
+        printIPs(filtered);
 
         filtered = filter(ip_pool, 46, 70);
-        sortAndPrint(filtered);
+        printIPs(filtered);
 
         filtered = filter_any(ip_pool, 46);
-        sortAndPrint(filtered);
+        printIPs(filtered);
     }
     catch(const std::exception &e)
     {
